@@ -72,7 +72,7 @@ If you aren't familiar with `@nandorojo/swr-firestore`, I recommend you check it
 
 ## Credit
 
-I'd like to thank @nnatter, @brettz9, and @bulby97 for contributing to the gist that led to the creation of this library.
+I'd like to thank @zwily, @nnatter, @brettz9, and @bulby97 for contributing to the gist that led to the creation of this library.
 
 For more background on their great work: https://gist.github.com/zwily/e9e97e0f9f523a72c24c7df01d889482
 
