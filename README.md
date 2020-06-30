@@ -1,4 +1,4 @@
-# expo-firestore-offline-persistence
+# Expo + Firestore + Offline Persistence ❄️🥳
 
 Enable Firestore persistence in Expo/React Native apps without detaching. ❄️
 
