@@ -1,0 +1,22 @@
+{
+  "name": "expo-firestore-offline-persistence-example",
+  "displayName": "ExpoFirestoreOfflinePersistence Example",
+  "expo": {
+    "name": "expo-firestore-offline-persistence-example",
+    "slug": "expo-firestore-offline-persistence-example",
+    "description": "Example app for expo-firestore-offline-persistence",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
