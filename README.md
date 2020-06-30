@@ -4,7 +4,7 @@ Enable Firestore persistence in Expo/React Native apps without detaching.
 
 ## Why?
 
-Firebase/Firestore peristence doesn't currently work in Expo apps, unless you detach and use `react-native-firebase`.
+Firebase/Firestore offline persistence doesn't currently work in Expo apps, unless you detach and use `react-native-firebase`.
 
 This library lets you use Firestore without detaching from Expo, by polyfilling the Firestore JS SDK.
 
@@ -64,9 +64,7 @@ const fuego = new Fuego({
 fuego.db.enablePersistence()
 
 export default function App() {
-  return (
-    <FuegoProvider fuego={fuego}>{/* Your app code here... */}</FuegoProvider>
-  )
+  return <FuegoProvider fuego={fuego}>{/* Your app code here... */}</FuegoProvider>
 }
 ```
 
