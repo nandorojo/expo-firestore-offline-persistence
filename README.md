@@ -2,25 +2,96 @@
 
 Enable Firestore persistence in Expo/React Native apps without detaching. ❄️
 
+## Why?
+
+Firebase/Firestore peristence doesn't currently work in Expo apps, unless you detach and use `react-native-firebase`.
+
+This library lets you use Firestore without detaching from Expo, by polyfilling the Firestore JS SDK.
+
+To learn more about Firestore peristence, see their offline mode docs: https://cloud.google.com/firestore/docs/manage-data/enable-offline
+
 ## Installation
 
 ```sh
+yarn add expo-firestore-offline-persistence
+
+# or
 npm install expo-firestore-offline-persistence
+```
+
+Install peer dependencies:
+
+```sh
+expo install expo-sqlite indexeddbshim
 ```
 
 ## Usage
 
+Import `expo-firestore-offline-persistence` root of your app. You should import this before you import firebase.
+
 ```js
-import ExpoFirestoreOfflinePersistence from "expo-firestore-offline-persistence";
+import 'expo-firestore-offline-persistence'
+```
+
+`App.js`
+
+```js
+import React from 'react'
+import { View } from 'react-native'
+
+import 'expo-firestore-offline-persistence'
 
 // ...
 
-const result = await ExpoFirestoreOfflinePersistence.multiply(3, 7);
+export default function App() {
+  return <View />
+}
 ```
 
-## Contributing
+And now, you can enable Firestore persistence like normal, as if you were using Firestore on web:
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+```js
+import 'expo-firestore-offline-persistence'
+
+// ...
+
+import * as firebase from 'firebase/app'
+import 'firebase/firestore'
+
+// You'll want to use the instance of Firestore you've already created, instead of firebase.firestore()
+firebase.firestore().enablePersistence()
+```
+
+If you're using `@nandorojo/swr-firestore`, you can access `fuego.db` directly. Your `App.js` will look like this:
+
+```js
+import * as React from 'react'
+
+import 'expo-firestore-offline-persistence' // 👋 import this first
+import 'firebase/firestore'
+
+import { FuegoProvider, Fuego } from '@nandorojo/swr-firestore'
+
+const fuego = new Fuego({
+  // your firebase config here
+})
+
+fuego.db.enablePersistence()
+
+export default function App() {
+  return (
+    <FuegoProvider fuego={fuego}>{/* Your app code here... */}</FuegoProvider>
+  )
+}
+```
+
+If you aren't familiar with `@nandorojo/swr-firestore`, I recommend you check it out. It makes querying Firestore in React/Expo apps way simpler.
+
+## Credit
+
+I'd like to thank @nnatter, @brettz9, and @bulby97 for contributing to the gist that led to the creation of this library.
+
+For more background on their great work: https://gist.github.com/zwily/e9e97e0f9f523a72c24c7df01d889482
 
 ## License
 

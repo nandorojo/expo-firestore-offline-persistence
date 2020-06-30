@@ -1,7 +1,7 @@
 {
   "name": "expo-firestore-offline-persistence",
   "version": "0.1.0",
-  "description": "Enable Firestore persistence in Expo/React Native apps without detaching. ❄️",
+  "description": "❄️ Enable Firestore offline persistence in Expo/React Native apps without detaching from Expo.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -10,10 +10,6 @@
   "files": [
     "src",
     "lib",
-    "android",
-    "ios",
-    "cpp",
-    "expo-firestore-offline-persistence.podspec",
     "!lib/typescript/example",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -60,11 +56,15 @@
     "react": "16.11.0",
     "react-native": "0.62.2",
     "release-it": "^13.5.8",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "expo-sqlite": "^8.2.1",
+    "indexeddbshim": "^6.6.0"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "expo-sqlite": ">=8.2.1",
+    "indexeddbshim": "^6.6.0"
   },
   "jest": {
     "preset": "react-native",
@@ -114,22 +114,31 @@
           "singleQuote": true,
           "tabWidth": 2,
           "trailingComma": "es5",
-          "useTabs": false
+          "useTabs": false,
+          "semi": false
         }
       ]
     }
   },
-  "eslintIgnore": ["node_modules/", "lib/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "es5",
-    "useTabs": false
+    "useTabs": false,
+    "semi": false
   },
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
-    "targets": ["commonjs", "module", "typescript"]
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
   }
 }
