@@ -27,28 +27,13 @@ expo install expo-sqlite indexeddbshim
 
 ## Usage
 
-Import `expo-firestore-offline-persistence` root of your app. You should import this before you import firebase.
+Import `expo-firestore-offline-persistence` in your root `App.js` file. You should import this before you import firebase.
 
 ```js
 import 'expo-firestore-offline-persistence'
 ```
 
-`App.js`
-
-```js
-import React from 'react'
-import { View } from 'react-native'
-
-import 'expo-firestore-offline-persistence'
-
-// ...
-
-export default function App() {
-  return <View />
-}
-```
-
-And now, you can enable Firestore persistence like normal, as if you were using Firestore on web:
+**That's it!** Now you can enable Firestore persistence like normal:
 
 ```js
 import 'expo-firestore-offline-persistence'
@@ -62,7 +47,7 @@ import 'firebase/firestore'
 firebase.firestore().enablePersistence()
 ```
 
-If you're using `@nandorojo/swr-firestore`, you can access `fuego.db` directly. Your `App.js` will look like this:
+If you're using `@nandorojo/swr-firestore`, you can enable this using `fuego.db` directly. Your `App.js` will look like this:
 
 ```js
 import * as React from 'react'
