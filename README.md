@@ -47,7 +47,7 @@ import 'firebase/firestore'
 firebase.firestore().enablePersistence()
 ```
 
-## Usage with `@nandorojo/swr-firestore`
+## Usage with [`@nandorojo/swr-firestore`](https://github.com/nandorojo/swr-firestore)
 
 If you're using `@nandorojo/swr-firestore`, you can enable this using `fuego.db` directly. Your `App.js` will look like this:
 
