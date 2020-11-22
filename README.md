@@ -55,7 +55,6 @@ If you're using `@nandorojo/swr-firestore`, you can enable this using `fuego.db`
 import * as React from 'react'
 
 import 'expo-firestore-offline-persistence' // 👋 import this first
-import 'firebase/firestore'
 
 import { FuegoProvider, Fuego } from '@nandorojo/swr-firestore'
 
