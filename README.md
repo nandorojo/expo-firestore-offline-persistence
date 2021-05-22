@@ -1,3 +1,5 @@
+## this repository is no longer maintained. Expo's New EAS makes it easier to use RN Firebase, so you should use that.
+
 # Expo + Firestore + Offline Persistence ❄️🥳
 
 Enable Firestore persistence in Expo/React Native apps without detaching.
